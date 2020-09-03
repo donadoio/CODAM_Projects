@@ -1,0 +1,56 @@
+// To code and decorate in C, or C++, adjust window settings.
+
+-----------------	How to survive netwhat and understand networks.	------------------
+-----------------	By idonado@student.codam.nl			------------------
+
+This is basically just a guide describing which online resources I used to
+understand the network concepts introduced in the netwhat project at CODAM - 42 network.
+>>>>>>>>>							>>>>>>>>>
+>>>>>>>>>	What is an IP Adress?				>>>>>>>>>
+>>>>>>>>>							>>>>>>>>>
+<<		Youtube tutorials				<<
+<<	1. https://www.youtube.com/watch?v=8zEVA-Bxs-0		<<
+<<	2. https://www.youtube.com/watch?v=7_-qWlvQQtY		<<
+<<	3. https://www.youtube.com/watch?v=ddM9AcreVqY		<<
+<<								<<
+<<								<<
+>>>>>>>>>							>>>>>>>>>
+>>>>>>>>>	What is a Netmask?				>>>>>>>>>
+>>>>>>>>>							>>>>>>>>>
+<<		Youtube tutorials				<<
+<<	1. https://www.youtube.com/watch?v=IDLrt-yppbI		<<
+<<	2. https://www.youtube.com/watch?v=-yz3FV8WliU		<<
+<<	3. https://www.youtube.com/watch?v=FC08K0ziErE		<<
+>>>>>>>>>							>>>>>>>>>
+>>>>>>>>>	What is the subnet of an IP with Netmask?	>>>>>>>>>
+>>>>>>>>>							>>>>>>>>>
+<<	To answer this question, we must first understand the	<<
+<<	first two concepts, IP Address and Netmask.		<<
+<<								<<
+<<	Now lets take this IP Address as an example:		<<
+<<			[185.61.55.68]				<<
+<<	The subnet of this IP address would probably be the	<<
+<<	last octet (68). 					<<
+<<	Lets first mask the IP's broadcast address		<<
+<<					(next concept)		<<
+<<			[255.255.255.68]			<<
+<<	What we see above is a masked IP Address revealing	<<
+<<	only the hosts address, 68 in this case.		<<
+<<			[255.255.255.0]				<<
+<<	And above, what we see is a netmask of our subnet.	<<
+>>>>>>>>>							>>>>>>>>>
+>>>>>>>>>	What is the broadcast address of a subnet	>>>>>>>>>
+>>>>>>>>>							>>>>>>>>>
+<<	To answer this question, we must first understand the   <<
+<<      first two concepts, IP Address and Netmask.		<<
+<<	Lets take the same example above,			<<
+<<			[185.61.55.0]				<<
+<<	Above we are viewing the broadcast address, up until	<<
+<<	the zero(0), which indicates our hosts address.		<<
+>>>>>>>>>							>>>>>>>>>
+>>>>>>>>>	What are the different ways to represent an	>>>>>>>>>
+>>>>>>>>>	ip address with the Netmask?			>>>>>>>>>
+>>>>>>>>>							>>>>>>>>>
+<<	We can represent an IP address with a netmask using	<<
+<<	CIDR Notation, Dotted decimal notation, or explicitly	<<
+<<	with bits(4 octets).					<<

@@ -51,6 +51,10 @@ RUN service mysql start && mysql -u root -p database_blog < database.sql --passw
 RUN chown -R www-data:www-data /var/www/ft_server/*
 RUN chmod 755 -R /var/www/ft_server/*
 
+#Toggle autoindex macro
+RUN echo "alias autoindexoff=\"cd /etc/nginx/sites-available/ && sed -i 's/autoindex on/autoindex off/g' ft_server && nginx -s reload\"" >> ~/.bashrc
+RUN echo "alias autoindexon=\"cd /etc/nginx/sites-available/ && sed -i 's/autoindex off/autoindex on/g' ft_server && nginx -s reload\"" >> ~/.bashrc
+
 EXPOSE 80 443 25
 
 CMD service php7.3-fpm start &&\

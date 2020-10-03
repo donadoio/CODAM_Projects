@@ -1,0 +1,21 @@
+body {
+	font-family: "Roboto", Helvetica Neue, "Arial,sans-serif", Apple Color Emoji,"Segoe UI Emoji", "Segoe UI Symbol";
+	background-color: darkslategray;
+  }
+
+  .profile-pic{
+	  width: 200px;
+	  height: 200px;
+	  border-radius: 100px;
+	  margin-bottom: 20px;
+  }
+
+  .container{
+	  max-width: 650px;
+	  min-width: 260px;
+  }
+
+  
+  .list-group-item{
+	  min-width: 160px;
+  }

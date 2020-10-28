@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Phonebook.cpp                                      :+:    :+:            */
+/*   Contact.hpp                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/09/20 13:40:31 by idonado       #+#    #+#                 */
-/*   Updated: 2020/09/20 13:40:40 by idonado       ########   odam.nl         */
+/*   Created: 2020/09/20 13:38:37 by idonado       #+#    #+#                 */
+/*   Updated: 2020/10/28 18:27:34 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Phonebook.hpp"
+#ifndef CONTACT
+#define CONTACT
+#include <iostream>
 
-PhonebookSlots::PhonebookSlots(/* args */)
+class Contact
 {
-	std::cout << "Created contact slots successfully." << std::endl << std::endl;
-}
-
-PhonebookSlots::~PhonebookSlots()
-{
-	std::cout << "Data has been deleted and program will terminate..." << std::endl;
-}
+public:
+	std::string firstname, lastname, nickname, login,
+	postal_address, email_address, phone_number,
+	birthday_date, favorite_meal, underwear_color,
+	darkest_secret;
+	static	int	slots_left;
+	void	add();
+	void	list_info();
+	Contact();
+	~Contact();
+};
+#endif

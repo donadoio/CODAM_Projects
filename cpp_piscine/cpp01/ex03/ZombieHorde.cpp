@@ -6,7 +6,7 @@
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 20:28:15 by idonado       #+#    #+#                 */
-/*   Updated: 2020/11/01 20:59:39 by idonado       ########   odam.nl         */
+/*   Updated: 2020/11/16 15:13:50 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ ZombieHorde::ZombieHorde(int N)
 
 ZombieHorde::~ZombieHorde()
 {
-	delete[] this->zombies;
+	std::cout << "Zombie Horde Destroyed." << std::endl;
+	delete [] this->zombies;
 }

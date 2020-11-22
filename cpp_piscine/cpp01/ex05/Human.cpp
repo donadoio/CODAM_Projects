@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   Human.cpp                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/01 20:25:48 by idonado       #+#    #+#                 */
-/*   Updated: 2020/11/14 16:03:36 by idonado       ########   odam.nl         */
+/*   Created: 2020/11/18 19:54:50 by idonado       #+#    #+#                 */
+/*   Updated: 2020/11/18 20:16:21 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include "ZombieHorde.hpp"
+#include "Human.hpp"
 
-int	main(void)
+Human::Human(/* args */)
 {
-	{
-		ZombieHorde	horde(15);
-	}
-	{
-		ZombieHorde	hordev2(28);
-	}
-	{
-		ZombieHorde	hordev3(3);
-	}
-	return (0);
+}
+
+Human::~Human()
+{
+}
+
+std::string	Human::identify() const
+{
+	return (this->_brain.identify());
+}
+
+const Brain	&Human::getBrain() const
+{
+	return (this->_brain);
 }

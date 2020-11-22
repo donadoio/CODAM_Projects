@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   Brain.cpp                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/01 20:25:48 by idonado       #+#    #+#                 */
-/*   Updated: 2020/11/14 16:03:36 by idonado       ########   odam.nl         */
+/*   Created: 2020/11/18 19:28:02 by idonado       #+#    #+#                 */
+/*   Updated: 2020/11/18 20:14:37 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include "ZombieHorde.hpp"
+#include "Brain.hpp"
+#include <sstream>
 
-int	main(void)
+Brain::Brain(/* args */)
 {
-	{
-		ZombieHorde	horde(15);
-	}
-	{
-		ZombieHorde	hordev2(28);
-	}
-	{
-		ZombieHorde	hordev3(3);
-	}
-	return (0);
+}
+
+Brain::~Brain()
+{
+}
+
+std::string	Brain::identify() const
+{
+	std::string 		address_str;
+	const void			*address;
+	std::stringstream	stringstream;
+
+	address = this;
+	stringstream << address;
+	address_str = stringstream.str();
+	return (address_str);
 }

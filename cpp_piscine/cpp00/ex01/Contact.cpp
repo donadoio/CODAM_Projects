@@ -6,7 +6,7 @@
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 16:45:50 by idonado       #+#    #+#                 */
-/*   Updated: 2020/10/28 18:28:22 by idonado       ########   odam.nl         */
+/*   Updated: 2020/11/23 18:48:08 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ Contact::Contact()
 }
 Contact::~Contact()
 {
-	std::cout << std::endl << "Contact information for " << this->nickname << " has been destroyed." << std::endl;
+	if (this->nickname.compare("[blank]") != 0)
+		std::cout << std::endl << "Contact information for " << this->nickname << " has been destroyed." << std::endl;
 	return;
 }
 

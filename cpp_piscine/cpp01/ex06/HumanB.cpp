@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Pony.hpp                                           :+:    :+:            */
+/*   HumanB.cpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/07/25 23:43:11 by idonado       #+#    #+#                 */
-/*   Updated: 2020/11/26 17:34:43 by idonado       ########   odam.nl         */
+/*   Created: 2020/11/25 17:41:19 by idonado       #+#    #+#                 */
+/*   Updated: 2020/11/25 18:45:56 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-#define PONY_HPP
+#include "HumanB.hpp"
 
-#include <iostream>
-
-class Pony
+void	HumanB::attack() const
 {
-public:
-	std::string	name;
-	std::string color;
-	int			legs;
-	int			horns;
-	void		fly();
-	void		jump(int meters);
-	Pony(std::string name_init, std::string color_init, int legs_init, int horns_init);
-	~Pony();
-};
-#endif
+	std::cout << this->name << " has attacked using " << this->_weapon->getType() << std::endl;
+}
+
+void	HumanB::setWeapon(Weapon &weapon)
+{
+	this->_weapon = &weapon;
+}
+
+HumanB::HumanB(/* args */)
+{
+	this->name = "undefined";
+}
+
+HumanB::HumanB(std::string name)
+{
+	this->name = name;
+}
+
+HumanB::~HumanB()
+{
+}

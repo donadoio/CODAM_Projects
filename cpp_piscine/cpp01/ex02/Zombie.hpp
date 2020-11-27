@@ -6,12 +6,12 @@
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/29 00:14:55 by idonado       #+#    #+#                 */
-/*   Updated: 2020/10/29 00:29:03 by idonado       ########   odam.nl         */
+/*   Updated: 2020/11/26 17:35:01 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE
-#define ZOMBIE
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 #include <iostream>
 
 class Zombie

@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   Logger.hpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/29 18:16:38 by idonado       #+#    #+#                 */
-/*   Updated: 2020/12/08 16:16:14 by idonado       ########   odam.nl         */
+/*   Created: 2020/12/08 16:18:07 by idonado       #+#    #+#                 */
+/*   Updated: 2020/12/08 18:09:56 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Human.hpp"
+#ifndef LOGGER_HPP
+#define LOGGER_HPP
 
-int	main(void)
+#include <iostream>
+
+class Logger
 {
-	Human bobby;
-	bobby.action("meleeAttack", "Fred");
-	bobby.action("rangedAttack", "Fred");
-	bobby.action("intimidatingShout", "Fred");
-	bobby.action("Booga", "Fred");
-	return (0);
-	}
+	public:
+	Logger(std::string filename);
+	void		log(std::string const &dest, std::string const &message);
+	private:
+	Logger();
+	std::string	_filename;
+	void		logToConsole(std::string const &text);
+	void		logToFile(std::string const &text);
+	std::string	makeLogEntry(std::string const &text);
+};
+
+#endif

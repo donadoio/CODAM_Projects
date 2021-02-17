@@ -6,7 +6,7 @@
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/29 00:14:44 by idonado       #+#    #+#                 */
-/*   Updated: 2020/11/01 18:38:00 by idonado       ########   odam.nl         */
+/*   Updated: 2021/02/14 08:37:17 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ Zombie	*ZombieEvent::newZombie(std::string name) const
 	return (newZombie);	
 }
 
-Zombie	*ZombieEvent::randomChump()
+void	ZombieEvent::randomChump()
 {
 	std::string random_name;
 
 	random_name = this->randomName();
-	Zombie	*newRandomChump = new Zombie(random_name, this->type);
-	return (newRandomChump);
+	Zombie	newRandomChump(random_name, this->type);
+	newRandomChump.announce();
 }

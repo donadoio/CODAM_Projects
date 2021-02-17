@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Contact.hpp                                        :+:    :+:            */
+/*   ZombieEvent.hpp                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/09/20 13:38:37 by idonado       #+#    #+#                 */
-/*   Updated: 2020/11/26 17:33:59 by idonado       ########   odam.nl         */
+/*   Created: 2020/10/29 00:14:55 by idonado       #+#    #+#                 */
+/*   Updated: 2021/02/14 08:35:26 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-#define CONTACT_HPP
-#include <iostream>
+#ifndef ZOMBIEEVENT_HPP
+#define ZOMBIEEVENT_HPP
 
-class Contact
+#include "Zombie.hpp"
+
+class ZombieEvent
 {
+private:
+	std::string	type;
+	std::string	randomName(void);
 public:
-	std::string firstname, lastname, nickname, login,
-	postal_address, email_address, phone_number,
-	birthday_date, favorite_meal, underwear_color,
-	darkest_secret;
-	static	int	slots_left;
-	void	add();
-	void	list_info();
-	Contact();
-	~Contact();
+	void		setZombieType(std::string type);
+	Zombie		*newZombie(std::string name) const;
+	void		randomChump(void);
+	ZombieEvent();
+	~ZombieEvent();
 };
+
 #endif

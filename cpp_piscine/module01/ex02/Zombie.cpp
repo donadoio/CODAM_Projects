@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ZombieEvent.hpp                                    :+:    :+:            */
+/*   Zombie.cpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/29 00:14:55 by idonado       #+#    #+#                 */
-/*   Updated: 2020/11/26 17:35:08 by idonado       ########   odam.nl         */
+/*   Created: 2020/10/29 00:14:44 by idonado       #+#    #+#                 */
+/*   Updated: 2021/02/14 08:40:17 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIEEVENT_HPP
-#define ZOMBIEEVENT_HPP
-
 #include "Zombie.hpp"
 
-class ZombieEvent
+Zombie::Zombie(std::string name, std::string type) : name(name), type(type)
 {
-private:
-	std::string	type;
-	std::string	randomName(void);
-public:
-	void		setZombieType(std::string type);
-	Zombie		*newZombie(std::string name) const;
-	Zombie		*randomChump(void);
-	ZombieEvent();
-	~ZombieEvent();
-};
+	std::cout << type << " zombie [" << name << "] has spawned." << std::endl;
+}
 
-#endif
+Zombie::~Zombie()
+{
+	std::cout << type << " zombie [" << name << "] has been destroyed." << std::endl;
+}
+
+void	Zombie::announce(void) const
+{
+	std::cout << '<' << this->name << ' ' << this->type << "> Brrrraaaaaaaaiiiiiinnnnnnsssss......" << std::endl;
+}

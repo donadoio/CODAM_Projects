@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Zombie.cpp                                         :+:    :+:            */
+/*   Pony.hpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/29 00:14:44 by idonado       #+#    #+#                 */
-/*   Updated: 2020/11/01 17:04:46 by idonado       ########   odam.nl         */
+/*   Created: 2020/07/25 23:43:11 by idonado       #+#    #+#                 */
+/*   Updated: 2021/02/14 08:18:06 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef PONY_HPP
+#define PONY_HPP
 
-Zombie::Zombie(std::string name, std::string type) : name(name), type(type)
-{
-	std::cout << type << " zombie [" << name << "] has spawned." << std::endl;
-}
+#include <iostream>
 
-Zombie::~Zombie()
+class Pony
 {
-}
-
-void	Zombie::announce(void) const
-{
-	std::cout << '<' << this->name << ' ' << this->type << "> Brrrraaaaaaaaiiiiiinnnnnnsssss......" << std::endl;
-}
+private:
+	std::string	name;
+	std::string color;
+	int			legs;
+	int			horns;
+	Pony();
+public:
+	void		fly();
+	void		jump(int meters);
+	Pony(std::string name_init, std::string color_init, int legs_init, int horns_init);
+	~Pony();
+};
+#endif

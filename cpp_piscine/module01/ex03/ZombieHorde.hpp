@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Pony.hpp                                           :+:    :+:            */
+/*   ZombieHorde.hpp                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/07/25 23:43:11 by idonado       #+#    #+#                 */
-/*   Updated: 2020/11/26 17:34:43 by idonado       ########   odam.nl         */
+/*   Created: 2020/11/01 20:27:24 by idonado       #+#    #+#                 */
+/*   Updated: 2021/02/14 08:49:31 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-#define PONY_HPP
+#ifndef ZOMBIEHORDE_HPP
+#define ZOMBIEHORDE_HPP
 
-#include <iostream>
+#include "Zombie.hpp"
 
-class Pony
+class ZombieHorde
 {
+private:
+	std::string	randomName();
+	ZombieHorde();
 public:
-	std::string	name;
-	std::string color;
-	int			legs;
-	int			horns;
-	void		fly();
-	void		jump(int meters);
-	Pony(std::string name_init, std::string color_init, int legs_init, int horns_init);
-	~Pony();
+	Zombie	*zombies;
+	ZombieHorde(int N);
+	~ZombieHorde();
 };
+
 #endif

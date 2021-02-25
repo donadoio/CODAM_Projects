@@ -6,13 +6,21 @@
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/21 15:47:59 by idonado       #+#    #+#                 */
-/*   Updated: 2021/02/24 15:17:12 by idonado       ########   odam.nl         */
+/*   Updated: 2021/02/24 16:44:15 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Class_Fixed.hpp"
 
 const int	Fixed::_fractionalBits = 8;
+
+// Non-member function --> (<<) operator
+std::ostream	&operator<<(std::ostream &output, Fixed const &object)
+{
+	float result = object.toFloat();
+	output << result;
+	return (output);
+}
 
 //Constructors
 
@@ -24,7 +32,7 @@ Fixed::Fixed() : _fixedPointValue(0)
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor Called." << std::endl;
+	std::cout << "\033[31mDestructor Called.\033[0m" << std::endl;
 	return ;
 }
 
@@ -36,11 +44,13 @@ Fixed::Fixed(Fixed const &original)
 
 Fixed::Fixed(float const value)
 {
+	std::cout << "Float Constructor Called." << std::endl;
 	this->_fixedPointValue = roundf(value * (1 << this->_fractionalBits));
 }
 
 Fixed::Fixed(int const value)
 {
+	std::cout << "Int Constructor Called." << std::endl;
 	this->_fixedPointValue = roundf(value * (1 << this->_fractionalBits));
 }
 
@@ -52,26 +62,18 @@ Fixed	&Fixed::operator=(Fixed const &current)
 	return *this;
 }
 
-std::ostream	&Fixed::operator<<(std::ostream &output, Fixed const object)
-{
-	output << "What?";
-	return (output);
-}
-
 //Member functions
 int	Fixed::getRawBits() const
 {
-	std::cout << "getRawBits() member function called." << std::endl;
 	return (this->_fixedPointValue);
 }
 
 void	Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits(int const raw) member function called." << std::endl;
 	this->_fixedPointValue = raw;
 }
 
-int		Fixed::toInt(void)
+int		Fixed::toInt(void) const
 {
 	int	result;
 
@@ -79,7 +81,7 @@ int		Fixed::toInt(void)
 	return (result);
 }
 
-float	Fixed::toFloat(void)
+float	Fixed::toFloat(void) const
 {
 	float	result;
 

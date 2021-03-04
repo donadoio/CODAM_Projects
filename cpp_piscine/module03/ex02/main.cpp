@@ -5,17 +5,17 @@
 /*                                                     +:+                    */
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/03/01 21:30:03 by idonado       #+#    #+#                 */
-/*   Updated: 2021/03/04 19:30:32 by idonado       ########   odam.nl         */
+/*   Created: 2021/03/04 16:58:28 by idonado       #+#    #+#                 */
+/*   Updated: 2021/03/04 19:38:30 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-int	main(void)
+int main(void)
 {
-	ScavTrap lilly("lilly");
+    ScavTrap lilly("lilly");
 
 	lilly.beRepaired(22);
 	lilly.challengeNewcomer();

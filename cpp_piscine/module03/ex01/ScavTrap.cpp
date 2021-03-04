@@ -6,7 +6,7 @@
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/01 21:38:45 by idonado       #+#    #+#                 */
-/*   Updated: 2021/03/01 23:01:24 by idonado       ########   odam.nl         */
+/*   Updated: 2021/03/04 19:36:12 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,7 @@ void	ScavTrap::rangedAttack(std::string const &target) const
 	}
 	else
 	{
-		std::cout << "SC4V-TP <" << this->name << "> has died. It cannot obey you!" << std::endl;
-		std::cout << "It can't do anything if it's dead!" << std::endl;
+		std::cout << "<" << this->name << "><SC4V-TP> is dead. It cannot obey you!" << std::endl;
 	}
 	return ;
 }
@@ -77,31 +76,37 @@ void	ScavTrap::meleeAttack(std::string const &target) const
 
 	if (this->hit_points > 0)
 	{
-		std::cout << "SC4V-TP <" << this->name << "> is stabbing <"
+		std::cout << "<" << this->name << "><SC4V-TP> is stabbing <"
 		<< target << ">  rapidly with a laser knife. <" << this->melee_attack_damage << "> damage points! Bazinga!" << std::endl;
 	}
 	else
 	{
-		std::cout << "SC4V-TP <" << this->name << "> has died. It cannot obey you!" << std::endl;
-		std::cout << "It can't do anything if it's dead!" << std::endl;
+		std::cout << "<" << this->name << "><SC4V-TP> is dead. It cannot obey you!" << std::endl;
 	}
 	return ;
 }
 
 void	ScavTrap::takeDamage(unsigned int amount)
 {
-	if ((amount - (unsigned int)this->armor_damage_reduction) >= this->hit_points)
+	if (this->hit_points > 0)
 	{
-		this->hit_points = 0;
-		std::cout <<  "SC4V-TP <" << this->name << "> is dead. X_X" << std::endl;
-		return ;
+		if ((amount - (unsigned int)this->armor_damage_reduction) >= this->hit_points)
+		{
+			this->hit_points = 0;
+			std::cout <<  "<" << this->name << "><SC4V-TP> took <" << amount << "> damage and died." << std::endl;
+			return ;
+		}
+		else
+		{
+			int damage = amount - this->armor_damage_reduction;
+			this->hit_points = this->hit_points - damage;
+			std::cout << "<" << this->name << "><SC4V-TP> took <" << damage << "> damage points! 'SSSSS Away!!!' " << std::endl;
+			std::cout << "<" << this->name << "><SC4V-TP>'s HP IS NOW <" << this->hit_points << "> ." << std::endl;
+		}
 	}
 	else
 	{
-		int damage = amount - this->armor_damage_reduction;
-		this->hit_points = this->hit_points - damage;
-		std::cout << "SC4V-TP <" << this->name << "> took <" << damage << "> damage points! 'SSSSS Away!!!' " << std::endl;
-		std::cout << "SC4V-TP <" << this->name << ">'s HP IS NOW <" << this->hit_points << "> ." << std::endl;
+		std::cout << "<" << this->name << "><SC4V-TP> is dead, it cannot take damage." << std::endl;
 	}
 	return ;
 }
@@ -133,7 +138,7 @@ void	ScavTrap::beRepaired(unsigned int amount)
 	}
 	else
 	{
-		std::cout << "CANNOT RESPAWN THE DEAD." << std::endl;
+		std::cout << "<" << this->name << "> CANNOT RESPAWN THE DEAD." << std::endl;
 	}
 	return ;
 }
@@ -144,18 +149,18 @@ void	ScavTrap::challengeNewcomer() const
 	{
 		std::string challenge[6];
 
-		challenge[0] = "challenge1";
-		challenge[1] = "challenge2";
-		challenge[2] = "challenge3";
-		challenge[3] = "challenge4";
-		challenge[4] = "challenge5";
-		challenge[5] = "challenge6";
+		challenge[0] = "Fool! You cannot defeat me!";
+		challenge[1] = "Betcha 20 euros I can whip your butt.";
+		challenge[2] = "You've never seen a thingy magingy like me...";
+		challenge[3] = "I may be made of metal, but I'm gonna beat you.";
+		challenge[4] = "You make me sick, I'll defeat you!";
+		challenge[5] = "You're so gross, low-quality robot this is your end!";
 
 		std::cout << "<" << this->name << "> " << challenge[rand() % 6] << std::endl;
 	}
 	else
 	{
-		std::cout << "<" << this->name << "> I'm dead, what do you want from me?" << std::endl;
+		std::cout << "<" << this->name << "><SC4V-TP> is dead it cannot challengeNewcomer()." << std::endl;
 	}	
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/01 21:38:45 by idonado       #+#    #+#                 */
-/*   Updated: 2021/03/04 19:36:12 by idonado       ########   odam.nl         */
+/*   Updated: 2021/03/04 22:40:15 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,12 @@ ScavTrap::ScavTrap(std::string const &name)
 	return ;
 }
 
+ScavTrap::ScavTrap()
+{
+	std::cout << "Empty ScavTrap Constructor called." <<  std::endl;
+	return ;
+}
+
 ScavTrap::~ScavTrap()
 {
 	std::cout << "SC4V-TP <" << name << "> faded away into nothingness." << std::endl;
@@ -37,7 +43,7 @@ ScavTrap::~ScavTrap()
 ScavTrap::ScavTrap(ScavTrap const &original)
 {
 	*this = original;
-	std::cout << "SC4V-TP <" << name << "> has been cloned. We're ready to go!" << std::endl;
+	std::cout << "SC4V-TP <" << name << "> has been copied. We're ready to go!" << std::endl;
 	srand(time(NULL));
 }
 
@@ -52,7 +58,7 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &other)
 	this->melee_attack_damage = other.melee_attack_damage;
 	this->ranged_attack_damage = other.ranged_attack_damage;
 	this->armor_damage_reduction = other.armor_damage_reduction;
-	std::cout << "SC4V-TP <" << name << "> has been cloned." << std::endl;
+	std::cout << "<" << name << "><SC4V-TP has been cloned by assignment." << std::endl;
 	srand(time(NULL));
 	return (*this);
 }

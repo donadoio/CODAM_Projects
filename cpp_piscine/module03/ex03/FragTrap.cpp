@@ -6,7 +6,7 @@
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/28 16:37:52 by idonado       #+#    #+#                 */
-/*   Updated: 2021/03/04 23:58:08 by idonado       ########   odam.nl         */
+/*   Updated: 2021/03/04 23:53:31 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 FragTrap::FragTrap(std::string const &name) : ClapTrap(name)
 {
 	std::cout << "<" << this->name << "><FR4G-TP> is ready to rumble. *Robotic Sounds*" << std::endl;
+	return ;
+}
+
+FragTrap::FragTrap() : ClapTrap()
+{
+	std::cout << std::endl << "Empty FragTrap Constructor called" << std::endl;
 	return ;
 }
 
@@ -32,12 +38,6 @@ FragTrap	&FragTrap::operator=(FragTrap const &other)
     std::cout << "<" << this->name << "><FR4G-TP> cloned by assignment and ready!" << std::endl;
 	srand(time(NULL));
 	return (*this);
-}
-
-FragTrap::FragTrap() : ClapTrap()
-{
-	std::cout << std::endl << "Empty FragTrap Constructor called" << std::endl;
-	return ;
 }
 
 FragTrap::~FragTrap()

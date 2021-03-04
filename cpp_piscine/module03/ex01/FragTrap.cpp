@@ -6,7 +6,7 @@
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/28 16:37:52 by idonado       #+#    #+#                 */
-/*   Updated: 2021/03/04 19:33:39 by idonado       ########   odam.nl         */
+/*   Updated: 2021/03/04 22:37:06 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ FragTrap::FragTrap(std::string const &name) : name(name)
 	srand(time(NULL));
 	std::cout << "<" << name << "><FR4G-TP> created.  *Robotic Sounds*" << std::endl;
 	return ;
+}
+
+FragTrap::FragTrap()
+{
+	std::cout << "Empty FragTrap Constructor called." <<  std::endl;
 }
 
 FragTrap::FragTrap(FragTrap const &original)

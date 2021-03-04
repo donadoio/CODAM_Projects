@@ -6,7 +6,7 @@
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/28 16:28:12 by idonado       #+#    #+#                 */
-/*   Updated: 2021/03/01 22:50:16 by idonado       ########   odam.nl         */
+/*   Updated: 2021/03/04 22:46:00 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ class FragTrap {
 	int 		ranged_attack_damage;
 	int 		armor_damage_reduction;
 	std::string	name;
-	FragTrap();
 
 	public:
+	FragTrap();
 	void		rangedAttack(std::string const &target) const;
 	void		meleeAttack(std::string const &target) const;
 	void		takeDamage(unsigned int amount);

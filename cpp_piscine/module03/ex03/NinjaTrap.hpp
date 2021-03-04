@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   FragTrap.hpp                                       :+:    :+:            */
+/*   NinjaTrap.hpp                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/02/28 16:28:12 by idonado       #+#    #+#                 */
-/*   Updated: 2021/03/04 23:57:53 by idonado       ########   odam.nl         */
+/*   Created: 2021/03/04 22:49:17 by idonado       #+#    #+#                 */
+/*   Updated: 2021/03/04 23:54:20 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#ifndef NINJATRAP_HPP
+#define NINJATRAP_HPP
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-class FragTrap : public ClapTrap
+class NinjaTrap : public ClapTrap
 {
 	public:
-	FragTrap();
-	void		vaulthunter_dot_exe(std::string const &target);
-	FragTrap	&operator=(FragTrap const &other);
-	FragTrap(std::string const &name);
-	FragTrap(FragTrap const &original);
-	~FragTrap();
+	NinjaTrap();
+	NinjaTrap(std::string const &name);
+	NinjaTrap(NinjaTrap	const &original);
+	~NinjaTrap();
+	NinjaTrap	&operator=(NinjaTrap const &other);
+	void		ninjaShoeBox(NinjaTrap &target) const;
+	void		ninjaShoeBox(ScavTrap &target) const;
+	void		ninjaShoeBox(FragTrap &target) const;
 };
 
 #endif

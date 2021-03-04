@@ -6,7 +6,7 @@
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/04 16:27:01 by idonado       #+#    #+#                 */
-/*   Updated: 2021/03/04 19:05:13 by idonado       ########   odam.nl         */
+/*   Updated: 2021/03/04 22:13:46 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,6 @@
 
 class ClapTrap
 {
-    private:
-	int			hit_points;
-	int 		max_hit_points;
-	int 		energy_points;
-	int 		max_energy_points;
-	int 		level;
-	int 		melee_attack_damage;
-	int 		ranged_attack_damage;
-	int 		armor_damage_reduction;
-	std::string	name;
-    ClapTrap();
-
     public:
     //Member functions
     void		rangedAttack(std::string const &target) const;
@@ -37,22 +25,23 @@ class ClapTrap
 	void		beRepaired(unsigned int amount);
 
     //Constructors / Destructor / Assignment
+    ClapTrap();
     ClapTrap    &operator=(ClapTrap const &other);
     ClapTrap    (ClapTrap   const &original);
     ClapTrap(std::string const &name);
     ~ClapTrap();
 
     protected:
-    // Getters & Setters
-    std::string const   &getName() const;
-    int                 getEnergy();
-    int                 getHealth();
-    void                setEnergy(int energy);
-    void                setHealth(int health);
-    void                setMaxEnergy(int energy);
-    void                setMelee(int amount);
-    void                setRanged(int amount);
-    void                setArmor(unsigned int amount);
+    // Shared values.
+    int			hit_points;
+	int 		max_hit_points;
+	int 		energy_points;
+	int 		max_energy_points;
+	int 		level;
+	int 		melee_attack_damage;
+	int 		ranged_attack_damage;
+	int 		armor_damage_reduction;
+	std::string	name;
 };
 
 #endif

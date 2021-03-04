@@ -6,7 +6,7 @@
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/01 21:37:53 by idonado       #+#    #+#                 */
-/*   Updated: 2021/03/04 17:43:04 by idonado       ########   odam.nl         */
+/*   Updated: 2021/03/04 23:59:13 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,10 @@
 
 class ScavTrap : public ClapTrap
 {
-	private:
-	ScavTrap();
-
 	public:
-	void		challengeNewcomer();
-	ScavTrap	&operator=(ScavTrap const &original);
+	ScavTrap();
+	void		challengeNewcomer() const;
+	ScavTrap	&operator=(ScavTrap const &other);
 	ScavTrap(std::string const &name);
 	ScavTrap(ScavTrap const &original);
 	~ScavTrap();

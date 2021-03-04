@@ -6,7 +6,7 @@
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/04 16:26:55 by idonado       #+#    #+#                 */
-/*   Updated: 2021/03/04 22:34:43 by idonado       ########   odam.nl         */
+/*   Updated: 2021/03/04 23:08:13 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,11 @@ ClapTrap    &ClapTrap::operator=(ClapTrap    const &other)
     std::cout << "<" << this->name << "> cloned by assignment and ready!" << std::endl;
 	srand(time(NULL));
 	return (*this);
+}
+
+std::string ClapTrap::getName()
+{
+	return (this->name);
 }
 
 void	ClapTrap::rangedAttack(std::string const &target) const

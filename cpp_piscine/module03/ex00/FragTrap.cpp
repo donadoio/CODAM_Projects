@@ -6,7 +6,7 @@
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/28 16:37:52 by idonado       #+#    #+#                 */
-/*   Updated: 2021/03/04 19:33:29 by idonado       ########   odam.nl         */
+/*   Updated: 2021/03/04 22:46:37 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@ FragTrap::FragTrap(std::string const &name) : name(name)
 	this->armor_damage_reduction = 5;
 	srand(time(NULL));
 	std::cout << "<" << name << "><FR4G-TP> created.  *Robotic Sounds*" << std::endl;
+	return ;
+}
+
+FragTrap::FragTrap()
+{
+	std::cout << "Empty FR4G-TP Constructor called." << std::endl;
 	return ;
 }
 

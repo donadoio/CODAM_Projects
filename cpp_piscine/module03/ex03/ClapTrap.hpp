@@ -1,23 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ScavTrap.hpp                                       :+:    :+:            */
+/*   ClapTrap.hpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/03/01 21:37:53 by idonado       #+#    #+#                 */
-/*   Updated: 2021/03/04 22:36:43 by idonado       ########   odam.nl         */
+/*   Created: 2021/03/04 16:27:01 by idonado       #+#    #+#                 */
+/*   Updated: 2021/03/04 23:08:20 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
 #include <iostream>
-class ScavTrap
+
+class ClapTrap
 {
-	private:
-	int			hit_points;
+    public:
+    //Member functions
+    std::string getName();
+    void		rangedAttack(std::string const &target) const;
+	void		meleeAttack(std::string const &target) const;
+	void		takeDamage(unsigned int amount);
+	void		beRepaired(unsigned int amount);
+
+    //Constructors / Destructor / Assignment
+    ClapTrap();
+    ClapTrap    &operator=(ClapTrap const &other);
+    ClapTrap    (ClapTrap   const &original);
+    ClapTrap(std::string const &name);
+    ~ClapTrap();
+
+    protected:
+    // Shared values.
+    int			hit_points;
 	int 		max_hit_points;
 	int 		energy_points;
 	int 		max_energy_points;
@@ -26,17 +43,6 @@ class ScavTrap
 	int 		ranged_attack_damage;
 	int 		armor_damage_reduction;
 	std::string	name;
-	public:
-	ScavTrap();
-	ScavTrap(std::string const &name);
-	ScavTrap(ScavTrap const &original);
-	~ScavTrap();
-	ScavTrap	&operator=(ScavTrap const &original);
-	void		rangedAttack(std::string const &target) const;
-	void		meleeAttack(std::string const &target) const;
-	void		takeDamage(unsigned int amount);
-	void		beRepaired(unsigned int amount);
-	void		challengeNewcomer() const;
 };
 
 #endif

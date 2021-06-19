@@ -6,7 +6,7 @@
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/28 16:37:52 by idonado       #+#    #+#                 */
-/*   Updated: 2021/03/04 23:53:31 by idonado       ########   odam.nl         */
+/*   Updated: 2021/03/25 16:46:13 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,6 @@
 FragTrap::FragTrap(std::string const &name) : ClapTrap(name)
 {
 	std::cout << "<" << this->name << "><FR4G-TP> is ready to rumble. *Robotic Sounds*" << std::endl;
-	return ;
-}
-
-FragTrap::FragTrap() : ClapTrap()
-{
-	std::cout << std::endl << "Empty FragTrap Constructor called" << std::endl;
 	return ;
 }
 
@@ -38,6 +32,12 @@ FragTrap	&FragTrap::operator=(FragTrap const &other)
     std::cout << "<" << this->name << "><FR4G-TP> cloned by assignment and ready!" << std::endl;
 	srand(time(NULL));
 	return (*this);
+}
+
+FragTrap::FragTrap() : ClapTrap()
+{
+	std::cout << std::endl << "Empty FragTrap Constructor called" << std::endl;
+	return ;
 }
 
 FragTrap::~FragTrap()
@@ -79,5 +79,33 @@ void	FragTrap::vaulthunter_dot_exe(std::string const &target)
 	{
 		std::cout << "<" << this->name << "><FR4G-TP> is dead, it cannot vaulthunter_dot_exe(" << target << ")." << std::endl;
 	}	
+	return ;
+}
+
+void	FragTrap::rangedAttack(std::string const &target) const
+{
+	if (this->hit_points > 0)
+	{
+		std::cout << "<" << this->name << "> has attacked someone called <"
+		<< target << ">  with a gun, it caused <" << this->ranged_attack_damage << "> damage points! Ouch!" << std::endl;
+	}
+	else
+	{
+		std::cout << "<" << this->name << "> is dead. It cannot attack." << std::endl;
+	}
+	return ;
+}
+
+void	FragTrap::meleeAttack(std::string const &target) const
+{
+	if (this->hit_points > 0)
+	{
+		std::cout << "<" << this->name << "> has attacked someone called <"
+		<< target << ">  with a stick, it caused <" << this->melee_attack_damage << "> damage points! Ouch!" << std::endl;
+	}
+	else
+	{
+		std::cout << "<" << this->name << "> is dead. it cannot attack." << std::endl;
+	}
 	return ;
 }

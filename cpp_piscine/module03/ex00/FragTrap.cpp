@@ -6,7 +6,7 @@
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/28 16:37:52 by idonado       #+#    #+#                 */
-/*   Updated: 2021/03/04 22:46:37 by idonado       ########   odam.nl         */
+/*   Updated: 2021/03/25 16:42:12 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ FragTrap::FragTrap(std::string const &name) : name(name)
 
 FragTrap::FragTrap()
 {
-	std::cout << "Empty FR4G-TP Constructor called." << std::endl;
+	std::cout << "Empty <FR4G-TP> Constructor called." << std::endl;
 	return ;
 }
 
@@ -57,7 +57,7 @@ FragTrap	&FragTrap::operator=(FragTrap const &other)
 
 FragTrap::~FragTrap()
 {
-	std::cout << "<" << this->name << "><FR4G-TP destroyed." << std::endl;
+	std::cout << "<" << this->name << "><FR4G-TP> destroyed." << std::endl;
 }
 
 void	FragTrap::rangedAttack(std::string const &target) const

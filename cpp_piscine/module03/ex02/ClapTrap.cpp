@@ -6,7 +6,7 @@
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/04 16:26:55 by idonado       #+#    #+#                 */
-/*   Updated: 2021/03/04 22:34:43 by idonado       ########   odam.nl         */
+/*   Updated: 2021/03/25 16:46:21 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,34 +60,6 @@ ClapTrap    &ClapTrap::operator=(ClapTrap    const &other)
     std::cout << "<" << this->name << "> cloned by assignment and ready!" << std::endl;
 	srand(time(NULL));
 	return (*this);
-}
-
-void	ClapTrap::rangedAttack(std::string const &target) const
-{
-	if (this->hit_points > 0)
-	{
-		std::cout << "<" << this->name << "> has attacked someone called <"
-		<< target << ">  with a gun, it caused <" << this->ranged_attack_damage << "> damage points! Ouch!" << std::endl;
-	}
-	else
-	{
-		std::cout << "<" << this->name << "> is dead. It cannot attack." << std::endl;
-	}
-	return ;
-}
-
-void	ClapTrap::meleeAttack(std::string const &target) const
-{
-	if (this->hit_points > 0)
-	{
-		std::cout << "<" << this->name << "> has attacked someone called <"
-		<< target << ">  with a stick, it caused <" << this->melee_attack_damage << "> damage points! Ouch!" << std::endl;
-	}
-	else
-	{
-		std::cout << "<" << this->name << "> is dead. it cannot attack." << std::endl;
-	}
-	return ;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)

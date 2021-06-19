@@ -6,7 +6,7 @@
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/01 21:38:45 by idonado       #+#    #+#                 */
-/*   Updated: 2021/03/04 23:51:20 by idonado       ########   odam.nl         */
+/*   Updated: 2021/03/25 16:47:28 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,34 @@ void	ScavTrap::challengeNewcomer() const
 	{
 		std::cout << "<" << this->name << "> is dead, it cannot challengeNewcomer()" << std::endl;
 	}	
+	return ;
+}
+
+void	ScavTrap::rangedAttack(std::string const &target) const
+{
+	if (this->hit_points > 0)
+	{
+		std::cout << "SC4V-TP <" << this->name << "> has shot a flaming arrow at someone called <"
+		<< target << ">  using a crossbow, it caused <" << this->ranged_attack_damage << "> damage points! That's gotta sting!" << std::endl;
+	}
+	else
+	{
+		std::cout << "<" << this->name << "><SC4V-TP> is dead. It cannot obey you!" << std::endl;
+	}
+	return ;
+}
+
+void	ScavTrap::meleeAttack(std::string const &target) const
+{
+
+	if (this->hit_points > 0)
+	{
+		std::cout << "<" << this->name << "><SC4V-TP> is stabbing <"
+		<< target << ">  rapidly with a laser knife. <" << this->melee_attack_damage << "> damage points! Bazinga!" << std::endl;
+	}
+	else
+	{
+		std::cout << "<" << this->name << "><SC4V-TP> is dead. It cannot obey you!" << std::endl;
+	}
 	return ;
 }

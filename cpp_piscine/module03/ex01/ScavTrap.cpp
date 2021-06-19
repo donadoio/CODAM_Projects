@@ -6,7 +6,7 @@
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/01 21:38:45 by idonado       #+#    #+#                 */
-/*   Updated: 2021/03/04 22:40:15 by idonado       ########   odam.nl         */
+/*   Updated: 2021/03/25 16:43:43 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,9 +156,9 @@ void	ScavTrap::challengeNewcomer() const
 		std::string challenge[6];
 
 		challenge[0] = "Fool! You cannot defeat me!";
-		challenge[1] = "Betcha 20 euros I can whip your butt.";
-		challenge[2] = "You've never seen a thingy magingy like me...";
-		challenge[3] = "I may be made of metal, but I'm gonna beat you.";
+		challenge[1] = "Betcha 20 euros I'll win.";
+		challenge[2] = "You've never seen a robotic thingy like me...";
+		challenge[3] = "I may be made of metal, but I'm gonna beat you... (?)";
 		challenge[4] = "You make me sick, I'll defeat you!";
 		challenge[5] = "You're so gross, low-quality robot this is your end!";
 

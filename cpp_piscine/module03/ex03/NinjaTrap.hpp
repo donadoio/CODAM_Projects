@@ -6,7 +6,7 @@
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/04 22:49:17 by idonado       #+#    #+#                 */
-/*   Updated: 2021/03/04 23:54:20 by idonado       ########   odam.nl         */
+/*   Updated: 2021/03/25 17:07:35 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class NinjaTrap : public ClapTrap
 	void		ninjaShoeBox(NinjaTrap &target) const;
 	void		ninjaShoeBox(ScavTrap &target) const;
 	void		ninjaShoeBox(FragTrap &target) const;
+	void		rangedAttack(std::string const &target) const;
+	void		meleeAttack(std::string const &target) const;
 };
 
 #endif

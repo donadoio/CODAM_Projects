@@ -6,7 +6,7 @@
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/04 16:27:01 by idonado       #+#    #+#                 */
-/*   Updated: 2021/03/04 22:13:46 by idonado       ########   odam.nl         */
+/*   Updated: 2021/03/25 16:46:53 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ class ClapTrap
 {
     public:
     //Member functions
-    void		rangedAttack(std::string const &target) const;
-	void		meleeAttack(std::string const &target) const;
 	void		takeDamage(unsigned int amount);
 	void		beRepaired(unsigned int amount);
 

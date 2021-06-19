@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   FragTrap.hpp                                       :+:    :+:            */
+/*   SuperTrap.hpp                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: idonado <idonado@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/02/28 16:28:12 by idonado       #+#    #+#                 */
-/*   Updated: 2021/03/25 16:46:40 by idonado       ########   odam.nl         */
+/*   Created: 2021/03/05 00:15:26 by idonado       #+#    #+#                 */
+/*   Updated: 2021/03/25 17:27:30 by idonado       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#ifndef SUPERTRAP_HPP
+#define SUPERTRAP_HPP
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "NinjaTrap.hpp"
 
-class FragTrap : public ClapTrap
+class SuperTrap : public FragTrap, public NinjaTrap
 {
 	public:
-	FragTrap();
+	SuperTrap();
+	SuperTrap(std::string const &name);
+	SuperTrap(SuperTrap const &other);
+	~SuperTrap();
+	SuperTrap	&operator=(SuperTrap const &other);
 	void		rangedAttack(std::string const &target) const;
 	void		meleeAttack(std::string const &target) const;
-	void		vaulthunter_dot_exe(std::string const &target);
-	FragTrap	&operator=(FragTrap const &other);
-	FragTrap(std::string const &name);
-	FragTrap(FragTrap const &original);
-	~FragTrap();
 };
 
 #endif
